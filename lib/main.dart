@@ -21,7 +21,31 @@ class MyApp extends StatelessWidget {
 }
 
 class QuizApp extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
-    return Container();
+    return DefaultTabController(
+        length: 3,
+        child: Scaffold(
+            appBar: AppBar(
+              title: Text("Simen's quiz "),
+            ),
+            bottomNavigationBar: TabBar(
+                indicatorColor: Colors.yellow,
+                labelColor: Colors.yellow,
+                tabs: [
+                  Tab(icon:Icon(Icons.home), text:"welkom"),
+                  Tab(icon:Icon(Icons.live_help), text:"QUIZ!"),
+                  Tab(icon:Icon(Icons.info), text:"over deze app"),
+                ]
+            ),
+            body: TabBarView(
+              children: [
+                Home(),
+                Quiz(),
+                Info()
+              ],
+            )
+        )
+    );
   }
 }
