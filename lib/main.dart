@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'home.dart';
 import 'quiz.dart';
 import 'info.dart';
+import 'bibliotheek.dart' as lib;
+
 
 void main() {
   runApp(MyApp());
