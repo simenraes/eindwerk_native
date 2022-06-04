@@ -28,10 +28,12 @@ class QuizApp extends StatelessWidget {
         child: Scaffold(
             appBar: AppBar(
               title: Text("Simen's quiz "),
+              backgroundColor: Colors.black,
             ),
             bottomNavigationBar: TabBar(
-                indicatorColor: Colors.yellow,
-                labelColor: Colors.yellow,
+
+                indicatorColor: Colors.red,
+                labelColor: Colors.red,
                 tabs: [
                   Tab(icon:Icon(Icons.home), text:"welkom"),
                   Tab(icon:Icon(Icons.live_help), text:"QUIZ!"),
