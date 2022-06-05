@@ -12,8 +12,16 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  int vraagTeller = 0;
-   String questionText= 'test';
+  int questionIndex = 0;
+
+  _answerQuestion() {
+    if (questionIndex < lib.questions.length - 1) {
+      setState(() {
+        questionIndex = questionIndex + 1;
+      });
+    }
+    print(questionIndex);
+  }   String questionText= 'test';
 
   @override
   Widget build(BuildContext context) {

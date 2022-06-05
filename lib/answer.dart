@@ -10,9 +10,7 @@ class Answer extends StatefulWidget {
 }
 
 class _AnswerState extends State<Answer>{
-  void answerQuestion() {
-    print('Answer 2 chosen');
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +35,7 @@ class _AnswerState extends State<Answer>{
                 ),
                 ElevatedButton(
                   child: Text('answer2'),
-                  onPressed: answerQuestion,
+                  onPressed: () => print("dikkestront"),
                 ),
                 ElevatedButton(
                   child: Text('answer3'),
