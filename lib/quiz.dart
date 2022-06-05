@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'answer.dart';
-import 'bibliotheek.dart' as lib;
 import 'question.dart';
 import 'result.dart';
 import 'bibliotheek.dart' as lib;
@@ -23,6 +22,7 @@ class _QuizState extends State<Quiz> {
     // } else {
     //   return Vraag(vraagTeller, score);
     // }
+    return Question();
     return Answer();
 
   }

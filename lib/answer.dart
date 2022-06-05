@@ -14,30 +14,32 @@ class Answer extends StatelessWidget {
       'What\'s your favorite color?',
       'What\'s your favorite animal?',
     ];
-    return Scaffold(
 
-      body: Center(
-        child: Column(
-          children: <Widget>[
 
-            ElevatedButton(
-              child: Text(questions.elementAt(0)),
-              onPressed: () => print('answer 1 chosen'),
-            ),
-            ElevatedButton(
-              child: Text('Question2'),
-              onPressed: answerQuestion,
-            ),
-            ElevatedButton(
-              child: Text('Question3'),
-              onPressed: () {
-                // ...
-                print('Answer 3 chosen');
-              },
-            ),
-          ],
+   return Container(
+        child: Center(
+          child: Column(
+            children: <Widget>[
+
+              ElevatedButton(
+                child: Text(questions.elementAt(0)),
+                onPressed: () => print('answer 1 chosen'),
+              ),
+              ElevatedButton(
+                child: Text('answer2'),
+                onPressed: answerQuestion,
+              ),
+              ElevatedButton(
+                child: Text('answer3'),
+                onPressed: () {
+                  // ...
+                  print('Answer 3 chosen');
+                },
+              ),
+            ],
+          ),
         ),
-      ),
-    );
+      );
+
   }
 }
