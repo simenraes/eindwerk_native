@@ -2,41 +2,27 @@ import 'package:flutter/material.dart';
 import 'bibliotheek.dart' as lib;
 import 'question.dart';
 import 'result.dart';
+import 'bibliotheek.dart' as lib;
 
-
-class Quiz extends StatelessWidget {
-  void answerQuestion() {
-    print('Answer 2 chosen');
+class Quiz extends StatefulWidget {
+  @override
+  _QuizState createState() {
+    return _QuizState();
   }
+}
+
+class _QuizState extends State<Quiz> {
+  int vraagTeller = 0;
+  int score = 0;
 
   @override
   Widget build(BuildContext context) {
-    var questions = [
-      'What\'s your favorite color?',
-      'What\'s your favorite animal?',
-    ];
-    return Scaffold(
+    // if (vraagTeller==lib.vragen.length) {
+    //   return Uitslag();
+    // } else {
+    //   return Vraag(vraagTeller, score);
+    // }
+    return Question();
 
-      body: Column(
-        children: <Widget>[
-          Text('The Question'),
-          ElevatedButton(
-            child: Text(questions.elementAt(0)),
-            onPressed: () => print('answer 1 chosen'),
-          ),
-          ElevatedButton(
-            child: Text('Question2'),
-            onPressed: answerQuestion,
-          ),
-          ElevatedButton(
-            child: Text('Question3'),
-            onPressed: () {
-              // ...
-              print('Answer 3 chosen');
-            },
-          ),
-        ],
-      ),
-    );
   }
 }

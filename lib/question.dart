@@ -3,24 +3,40 @@ import '../bibliotheek.dart' as lib;
 import 'answer.dart';
 
 class Question extends StatelessWidget {
+  void answerQuestion() {
+    print('Answer 2 chosen');
+  }
+
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    var questions = [
+      'What\'s your favorite color?',
+      'What\'s your favorite animal?',
+    ];
+    return Scaffold(
+
+      body: Center(
+        child: Column(
           children: <Widget>[
-            Container(
-                padding: EdgeInsets.only(left: lib.tekstMarge),
-                child: Text("vraag 1 van 5", style: lib.basisTekst,)
+
+            ElevatedButton(
+              child: Text(questions.elementAt(0)),
+              onPressed: () => print('answer 1 chosen'),
             ),
-            Container(
-              padding: EdgeInsets.only(right: lib.tekstMarge),
-              child: Text("score: 10", style: lib.basisTekst,),
-            )
+            ElevatedButton(
+              child: Text('Question2'),
+              onPressed: answerQuestion,
+            ),
+            ElevatedButton(
+              child: Text('Question3'),
+              onPressed: () {
+                // ...
+                print('Answer 3 chosen');
+              },
+            ),
           ],
-        )
-      ],
+        ),
+      ),
     );
   }
 }
