@@ -27,16 +27,16 @@ class Question extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             Answer(),
-            Answer()
+
           ],
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            Answer(),
-            Answer()
-          ],
-        )
+        // Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //   children: <Widget>[
+        //     Answer(),
+        //     Answer()
+        //   ],
+        // )
       ],
 
     );

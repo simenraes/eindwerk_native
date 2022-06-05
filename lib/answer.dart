@@ -16,6 +16,8 @@ class _AnswerState extends State<Answer>{
 
   @override
   Widget build(BuildContext context) {
+    double knopBreedte = MediaQuery.of(context).size.width * 0.5 - lib.tekstMarge * 2;
+
     var questions = [
       'What\'s your favorite color?',
       'What\'s your favorite animal?',
@@ -24,25 +26,28 @@ class _AnswerState extends State<Answer>{
 
    return Container(
         child: Center(
-          child: Column(
-            children: <Widget>[
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: <Widget>[
 
-              ElevatedButton(
-                child: Text(questions.elementAt(0)),
-                onPressed: () => print('answer 1 chosen'),
-              ),
-              ElevatedButton(
-                child: Text('answer2'),
-                onPressed: answerQuestion,
-              ),
-              ElevatedButton(
-                child: Text('answer3'),
-                onPressed: () {
-                  // ...
-                  print('Answer 3 chosen');
-                },
-              ),
-            ],
+                ElevatedButton(
+                  child: Text(questions.elementAt(0)),
+                  onPressed: () => print('answer 1 chosen'),
+                ),
+                ElevatedButton(
+                  child: Text('answer2'),
+                  onPressed: answerQuestion,
+                ),
+                ElevatedButton(
+                  child: Text('answer3'),
+                  onPressed: () {
+                    // ...
+                    print('Answer 3 chosen');
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       );
