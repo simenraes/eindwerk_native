@@ -4,25 +4,39 @@ import 'question.dart';
 import 'result.dart';
 
 
-
-class Quiz extends StatefulWidget {
-  @override
-  _QuizState createState() {
-    return _QuizState();
+class Quiz extends StatelessWidget {
+  void answerQuestion() {
+    print('Answer 2 chosen');
   }
-}
-
-class _QuizState extends State<Quiz> {
-  int vraagTeller = 0;
-  int score = 0;
-  int aantalVragen = 1;
 
   @override
   Widget build(BuildContext context) {
-    if (vraagTeller==aantalVragen) {
-      return Result();
-    } else {
-      return Question();
-    }
+    var questions = [
+      'What\'s your favorite color?',
+      'What\'s your favorite animal?',
+    ];
+    return Scaffold(
+
+      body: Column(
+        children: <Widget>[
+          Text('The Question'),
+          ElevatedButton(
+            child: Text('Question1'),
+            onPressed: () => print('answer 1 chosen'),
+          ),
+          ElevatedButton(
+            child: Text('Question2'),
+            onPressed: answerQuestion,
+          ),
+          ElevatedButton(
+            child: Text('Question3'),
+            onPressed: () {
+              // ...
+              print('Answer 3 chosen');
+            },
+          ),
+        ],
+      ),
+    );
   }
 }
