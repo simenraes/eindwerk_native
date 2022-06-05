@@ -21,7 +21,7 @@ class Quiz extends StatelessWidget {
         children: <Widget>[
           Text('The Question'),
           ElevatedButton(
-            child: Text('Question1'),
+            child: Text(questions.elementAt(0)),
             onPressed: () => print('answer 1 chosen'),
           ),
           ElevatedButton(
