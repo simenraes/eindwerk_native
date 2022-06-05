@@ -11,3 +11,7 @@ const TextStyle kopTekst = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.bold
 );
+
+const TextStyle answers = TextStyle(
+
+);

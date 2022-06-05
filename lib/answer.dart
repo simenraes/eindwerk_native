@@ -3,7 +3,13 @@ import 'package:flutter/material.dart';
 import '../bibliotheek.dart' as lib;
 import 'answer.dart';
 
-class Answer extends StatelessWidget {
+class Answer extends StatefulWidget {
+  @override
+  _AnswerState createState() => _AnswerState();
+
+}
+
+class _AnswerState extends State<Answer>{
   void answerQuestion() {
     print('Answer 2 chosen');
   }
