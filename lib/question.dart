@@ -3,10 +3,12 @@ import 'answer.dart';
 import 'bibliotheek.dart' as lib;
 class Question extends StatelessWidget {
 
-  final String questionText;
+  // final String questionText;
+  int vraagNummer = 0;
 
 
-  Question(this.questionText);
+
+  Question(this.vraagNummer);
 
   @override
   Widget build(BuildContext context) {
@@ -27,17 +29,11 @@ class Question extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            Answer(),
+            Answer(lib.questions[vraagNummer]['answers'][0]['text']),
 
           ],
         ),
-        // Row(
-        //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-        //   children: <Widget>[
-        //     Answer(),
-        //     Answer()
-        //   ],
-        // )
+
       ],
 
     );

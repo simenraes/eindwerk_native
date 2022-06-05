@@ -12,16 +12,18 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  int questionIndex = 0;
+  // int questionIndex = 0;
+  int vraagTeller = 0;
 
-  _answerQuestion() {
-    if (questionIndex < lib.questions.length - 1) {
-      setState(() {
-        questionIndex = questionIndex + 1;
-      });
-    }
-    print(questionIndex);
-  }   String questionText= 'test';
+
+  // _answerQuestion() {
+  //   if (questionIndex < lib.questions.length - 1) {
+  //     setState(() {
+  //       questionIndex = questionIndex + 1;
+  //     });
+  //   }
+  //   print(questionIndex);
+  // }   String questionText= 'test';
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class _QuizState extends State<Quiz> {
     // } else {
     //   return Vraag(vraagTeller, score);
     // }
-    return Question(questionText);
+    return Question(vraagTeller);
 
   }
 }

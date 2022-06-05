@@ -1,54 +1,36 @@
 import 'package:flutter/material.dart';
-
 import '../bibliotheek.dart' as lib;
-import 'answer.dart';
 
 class Answer extends StatefulWidget {
+  final String antwoord;
+
+  Answer(this.antwoord);
+
   @override
   _AnswerState createState() => _AnswerState();
-
 }
 
-class _AnswerState extends State<Answer>{
-
-
+class _AnswerState extends State<Answer> {
   @override
   Widget build(BuildContext context) {
     double knopBreedte = MediaQuery.of(context).size.width * 0.5 - lib.tekstMarge * 2;
 
-    var questions = [
-      'What\'s your favorite color?',
-      'What\'s your favorite animal?',
-    ];
-
-
-   return Container(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: <Widget>[
-
-                ElevatedButton(
-                  child: Text('answer1'),
-                  onPressed: () => print('answer 1 chosen'),
-                ),
-                ElevatedButton(
-                  child: Text('answer2'),
-                  onPressed: () => print("dikkestront"),
-                ),
-                ElevatedButton(
-                  child: Text('answer3'),
-                  onPressed: () {
-                    // ...
-                    print('Answer 3 chosen');
-                  },
-                ),
-              ],
+    return Padding(
+        padding: const EdgeInsets.all(lib.tekstMarge),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(minHeight: knopBreedte * 0.5, minWidth: knopBreedte, maxWidth: knopBreedte),
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+                color: Colors.blue[100],
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [BoxShadow(color: Colors.black, blurRadius: 1.0)],
+                border: Border.all(color: Colors.blue, width: 2)
+            ),
+            child: Center(
+                child: Text(widget.antwoord, textAlign: TextAlign.center, style: lib.basisTekst)
             ),
           ),
-        ),
-      );
-
+        )
+    );
   }
 }
