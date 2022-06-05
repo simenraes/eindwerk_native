@@ -18,7 +18,7 @@ class Question extends StatelessWidget {
             ConstrainedBox(
               constraints: BoxConstraints(minHeight: 50),
               child: Container(
-                  child: Text("Wat is de vraag?", style: lib.kopTekst, textAlign: TextAlign.center,)
+                  child: Text(lib.questions[0]['questionText'], style: lib.kopTekst, textAlign: TextAlign.center,)
               ),
             ),
 

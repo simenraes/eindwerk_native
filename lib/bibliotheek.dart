@@ -12,7 +12,7 @@ const TextStyle kopTekst = TextStyle(
     fontWeight: FontWeight.bold
 );
 
-var _questions = [
+List<dynamic> questions = [
   {
     'questionText': 'What\'s your favorite color?',
     'answers': [
