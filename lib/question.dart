@@ -26,15 +26,7 @@ class Question extends StatelessWidget {
 
           ],
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            Answer(lib.questions[vraagNummer]['answers'][0]['text'],
 
-            ),
-
-          ],
-        ),
 
       ];
 
