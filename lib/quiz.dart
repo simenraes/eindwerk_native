@@ -13,7 +13,7 @@ class Quiz extends StatefulWidget {
 
 class _QuizState extends State<Quiz> {
   int vraagTeller = 0;
-  int score = 0;
+   String questionText= 'test';
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +22,7 @@ class _QuizState extends State<Quiz> {
     // } else {
     //   return Vraag(vraagTeller, score);
     // }
-    return Question();
-    return Answer();
+    return Question(questionText);
 
   }
 }

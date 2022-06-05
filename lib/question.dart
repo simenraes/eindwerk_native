@@ -3,9 +3,10 @@ import 'answer.dart';
 import 'bibliotheek.dart' as lib;
 class Question extends StatelessWidget {
 
-  // late final String questionText;
-  //
-  // Question(this.questionText);
+  final String questionText;
+
+
+  Question(this.questionText);
 
   @override
   Widget build(BuildContext context) {
