@@ -3,8 +3,11 @@ import '../bibliotheek.dart' as lib;
 
 class Answer extends StatefulWidget {
   final String antwoord;
+  final Color buttonColor;
+  final Color textColor;
 
-  Answer(this.antwoord);
+
+  Answer(this.antwoord, this.buttonColor, this.textColor);
 
   @override
   _AnswerState createState() => _AnswerState();
