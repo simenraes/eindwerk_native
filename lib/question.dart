@@ -12,15 +12,15 @@ class Question extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        Row(
+    List<Widget> header = <Widget> [
+
+      Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             ConstrainedBox(
               constraints: BoxConstraints(minHeight: 50),
               child: Container(
-                  child: Text(lib.questions[0]['questionText'], style: lib.kopTekst, textAlign: TextAlign.center,)
+                  child: Text(lib.questions[vraagNummer]['questionText'], style: lib.kopTekst, textAlign: TextAlign.center,)
               ),
             ),
 
@@ -29,13 +29,34 @@ class Question extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            Answer(lib.questions[vraagNummer]['answers'][0]['text']),
+            Answer(lib.questions[vraagNummer]['answers'][0]['text'],
+
+            ),
 
           ],
         ),
 
-      ],
+      ];
 
+    return ListView(
+    children: [...header, ...maakAntwoordRijen()]
     );
+  }
+  List<Row> maakAntwoordRijen() {
+    List<Row> rijen = <Row>[];
+    int answerQuantity = (lib.questions[vraagNummer]['answers'].length);
+
+    for (int rij = 0; rij < answerQuantity; rij++) {
+      List<Answer> knoppen = <Answer>[];
+      knoppen.add(Answer(lib.questions[vraagNummer]['answers'][rij]['text']));
+
+
+      rijen.add(Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: knoppen
+      ));
+    }
+
+    return rijen;
   }
 }

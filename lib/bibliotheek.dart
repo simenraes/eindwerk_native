@@ -19,19 +19,9 @@ List<dynamic> questions = [
       {'text': 'Blue', 'score': 2, 'buttonColor': Colors.blue},
       {'text': 'Green', 'score': 3, 'buttonColor': Colors.green},
       {'text': 'Purple', 'score': 6, 'buttonColor': Colors.purple},
-      {
-        'text': 'Yellow',
-        'score': 2,
-        'buttonColor': Colors.yellow,
-        'textColor': Colors.black
-      },
+      {'text': 'Yellow', 'score': 2, 'buttonColor': Colors.yellow, 'textColor': Colors.black},
       {'text': 'Red', 'score': 7, 'buttonColor': Colors.red},
-      {
-        'text': 'White',
-        'score': 0,
-        'buttonColor': Colors.white,
-        'textColor': Colors.black
-      },
+      {'text': 'White', 'score': 0, 'buttonColor': Colors.white, 'textColor': Colors.black},
       {'text': 'black', 'score': 10, 'buttonColor': Colors.black},
     ]
   },
