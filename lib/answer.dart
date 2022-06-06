@@ -3,17 +3,19 @@ import '../bibliotheek.dart' as lib;
 
 class Answer extends StatefulWidget {
   final String antwoord;
-  final Color buttonColor;
-  final Color textColor;
 
 
-  Answer(this.antwoord, this.buttonColor, this.textColor);
+
+
+
+  Answer(this.antwoord);
 
   @override
   _AnswerState createState() => _AnswerState();
 }
 
 class _AnswerState extends State<Answer> {
+
   @override
   Widget build(BuildContext context) {
     double knopBreedte = MediaQuery.of(context).size.width * 0.5 - lib.tekstMarge * 2;
@@ -21,10 +23,10 @@ class _AnswerState extends State<Answer> {
     return Padding(
         padding: const EdgeInsets.all(lib.tekstMarge),
         child: ConstrainedBox(
-          constraints: BoxConstraints(minHeight: knopBreedte * 0.5, minWidth: knopBreedte, maxWidth: knopBreedte),
+          constraints: BoxConstraints( minWidth: knopBreedte, maxWidth: knopBreedte),
           child: DecoratedBox(
             decoration: BoxDecoration(
-                color: Colors.blue[100],
+                color: lib.questions[0]['answers'][2]['buttonColor'],
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [BoxShadow(color: Colors.black, blurRadius: 1.0)],
                 border: Border.all(color: Colors.blue, width: 2)

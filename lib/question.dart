@@ -46,6 +46,7 @@ class Question extends StatelessWidget {
       rijen.add(Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: knoppen
+
       ));
     }
 
