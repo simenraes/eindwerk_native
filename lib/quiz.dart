@@ -3,6 +3,8 @@ import 'answer.dart';
 import 'question.dart';
 import 'result.dart';
 import 'bibliotheek.dart' as lib;
+import 'package:http/http.dart' as http;
+
 
 class Quiz extends StatefulWidget {
   @override
