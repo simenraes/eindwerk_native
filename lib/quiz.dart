@@ -4,6 +4,8 @@ import 'question.dart';
 import 'result.dart';
 import 'bibliotheek.dart' as lib;
 import 'package:http/http.dart' as http;
+import 'dart:convert';
+
 
 
 class Quiz extends StatefulWidget {
