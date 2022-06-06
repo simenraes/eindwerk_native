@@ -19,6 +19,18 @@ class _QuizState extends State<Quiz> {
   // int questionIndex = 0;
   int vraagTeller = 0;
 
+  void startQuiz() async {
+    try {
+      var onlineInhoud = await http.get(Uri.parse(lib.vragenUrl + 'data.json'));
+      lib.questions = json.decode(onlineInhoud.body);
+    } catch (error) {
+      print(error);
+    }
+    setState(() {
+      vraagTeller = 0;
+    });
+  }
+
 
   // _answerQuestion() {
   //   if (questionIndex < lib.questions.length - 1) {
