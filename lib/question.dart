@@ -44,6 +44,7 @@ class Question extends StatelessWidget {
 
 
       rijen.add(Container(
+        constraints: BoxConstraints(minWidth: 20, maxWidth: 50),
 
             color: lib.questions[vraagNummer]['answers'][rij]['buttonColor'],
         width: 2,
