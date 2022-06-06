@@ -26,9 +26,9 @@ class _AnswerState extends State<Answer> {
           constraints: BoxConstraints( minWidth: knopBreedte, maxWidth: knopBreedte),
           child: DecoratedBox(
             decoration: BoxDecoration(
-                color: lib.questions[0]['answers'][2]['buttonColor'],
+                color: Colors.transparent,
                 borderRadius: BorderRadius.circular(12),
-                boxShadow: [BoxShadow(color: Colors.black, blurRadius: 1.0)],
+
                 border: Border.all(color: Colors.blue, width: 2)
             ),
             child: Center(

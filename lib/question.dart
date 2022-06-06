@@ -34,8 +34,8 @@ class Question extends StatelessWidget {
     children: [...header, ...maakAntwoordRijen()]
     );
   }
-  List<Row> maakAntwoordRijen() {
-    List<Row> rijen = <Row>[];
+  List<Container> maakAntwoordRijen() {
+    List<Container> rijen = <Container>[];
     int answerQuantity = (lib.questions[vraagNummer]['answers'].length);
 
     for (int rij = 0; rij < answerQuantity; rij++) {
@@ -43,11 +43,20 @@ class Question extends StatelessWidget {
       knoppen.add(Answer(lib.questions[vraagNummer]['answers'][rij]['text']));
 
 
-      rijen.add(Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: knoppen
+      rijen.add(Container(
 
-      ));
+            color: lib.questions[vraagNummer]['answers'][rij]['buttonColor'],
+
+        child: Row(
+          children: knoppen,
+        ),
+
+
+
+      )
+
+
+      );
     }
 
     return rijen;
