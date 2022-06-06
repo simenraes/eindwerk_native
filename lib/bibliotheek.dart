@@ -13,3 +13,4 @@ const TextStyle kopTekst = TextStyle(
 );
 
 List<dynamic> questions = [];
+const vragenUrl = 'https://simenraes.github.io/data/data.json';
