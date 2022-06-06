@@ -46,10 +46,16 @@ class Question extends StatelessWidget {
       rijen.add(Container(
 
             color: lib.questions[vraagNummer]['answers'][rij]['buttonColor'],
+        width: 2,
+        padding: EdgeInsets.all(10),
 
-        child: Row(
-          children: knoppen,
+
+        child: Center(
+          child: Row(
+            children: knoppen,
+          ),
         ),
+
 
 
 
