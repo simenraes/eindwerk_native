@@ -19,36 +19,31 @@ class _QuizState extends State<Quiz> {
   // int questionIndex = 0;
   int vraagTeller = 0;
 
+  void initState() {
+    startQuiz();
+    super.initState();
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    if (vraagTeller==lib.questions.length) {
+      return Result();
+    } else {
+      return Question(vraagTeller);
+    }
+
+  }
+
   void startQuiz() async {
     try {
-      var onlineInhoud = await http.get(Uri.parse(lib.vragenUrl + 'data.json'));
+      var onlineInhoud = await http.get(Uri.parse(lib.vragenUrl));
       lib.questions = json.decode(onlineInhoud.body);
     } catch (error) {
-      print(error);
+      // print(error);
     }
     setState(() {
       vraagTeller = 0;
     });
-  }
-
-
-  // _answerQuestion() {
-  //   if (questionIndex < lib.questions.length - 1) {
-  //     setState(() {
-  //       questionIndex = questionIndex + 1;
-  //     });
-  //   }
-  //   print(questionIndex);
-  // }   String questionText= 'test';
-
-  @override
-  Widget build(BuildContext context) {
-    // if (vraagTeller==lib.vragen.length) {
-    //   return Uitslag();
-    // } else {
-    //   return Vraag(vraagTeller, score);
-    // }
-    return Question(vraagTeller);
-
   }
 }
