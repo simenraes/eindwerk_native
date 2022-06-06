@@ -22,19 +22,25 @@ class _AnswerState extends State<Answer> {
 
     return Padding(
         padding: const EdgeInsets.all(lib.tekstMarge),
-        child: ConstrainedBox(
-          constraints: BoxConstraints( minWidth: knopBreedte, maxWidth: knopBreedte),
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-                color: Colors.transparent,
-                borderRadius: BorderRadius.circular(12),
 
-                border: Border.all(color: Colors.blue, width: 2)
-            ),
-            child: Center(
-                child: Text(widget.antwoord, textAlign: TextAlign.center, style: lib.basisTekst)
+        child: GestureDetector(
+          child: ConstrainedBox(
+            constraints: BoxConstraints( minWidth: knopBreedte, maxWidth: knopBreedte),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.circular(12),
+
+                  border: Border.all(color: Colors.blue, width: 2)
+              ),
+              child: Center(
+                  child: Text(widget.antwoord, textAlign: TextAlign.center, style: lib.basisTekst)
+              ),
             ),
           ),
+    onTap: () {
+      print('tik');
+    }
         )
     );
   }
