@@ -59,7 +59,9 @@ class _QuizState extends State<Quiz> {
       lib.questions = json.decode(onlineInhoud.body);
     } catch (error) {
       // print(error);
+
     }
+    lib.geladen = true;
     setState(() {
       vraagTeller = 0;
     });
