@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
 }
 
 class QuizApp extends StatelessWidget {
+  int totalScore = 0;
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -45,7 +46,7 @@ class QuizApp extends StatelessWidget {
             body: TabBarView(
               children: [
                 Home(),
-                Quiz(),
+                Quiz(totalScore),
                 Info()
               ],
             )

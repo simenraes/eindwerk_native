@@ -11,6 +11,9 @@ import 'dart:convert';
 
 
 class Quiz extends StatefulWidget {
+  int totalScore = 0;
+
+  Quiz(this.totalScore);
 
   @override
   _QuizState createState() {
@@ -22,7 +25,7 @@ class _QuizState extends State<Quiz> {
   // int questionIndex = 0;
   int vraagTeller = 0;
   int timer = 10;
-  int totalScore = 0;
+  late String resultText = " ";
 
 
 
@@ -36,7 +39,7 @@ class _QuizState extends State<Quiz> {
   @override
   Widget build(BuildContext context) {
     if (vraagTeller==lib.questions.length) {
-      return Result(totalScore);
+      return Result(widget.totalScore, resultText);
     } else {
       return Question(vraagTeller, verwerkAntwoord, timer);
     }
@@ -60,8 +63,8 @@ class _QuizState extends State<Quiz> {
     setState(() {
       vraagTeller++;
       timer= 10;
-      totalScore += score;
-      print(totalScore);
+      widget.totalScore += score;
+      print(widget.totalScore);
 
     });
   }
