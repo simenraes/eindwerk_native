@@ -20,6 +20,7 @@ class Question extends StatefulWidget {
 }
 class _QuestionState extends State<Question> {
   String showtimer = "10";
+  bool canceltimer= false;
 
   @override
   void initState(){
