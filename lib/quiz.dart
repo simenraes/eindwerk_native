@@ -22,6 +22,7 @@ class _QuizState extends State<Quiz> {
   // int questionIndex = 0;
   int vraagTeller = 0;
   int timer = 10;
+  int totalScore = 0;
 
 
 
@@ -55,10 +56,12 @@ class _QuizState extends State<Quiz> {
     });
   }
 
-  void verwerkAntwoord() {
+  void verwerkAntwoord(int score) {
     setState(() {
       vraagTeller++;
       timer= 10;
+      totalScore += score;
+      print(totalScore);
 
     });
   }
