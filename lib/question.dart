@@ -9,8 +9,10 @@ import 'quiz.dart';
 class Question extends StatefulWidget {
   // final String questionText;
   int vraagNummer = 0;
+  final Function verwerkAntwoord;
 
-  Question(this.vraagNummer);
+
+  Question(this.vraagNummer, this.verwerkAntwoord);
   @override
   _QuestionState createState() => _QuestionState();
 }
