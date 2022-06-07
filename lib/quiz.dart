@@ -32,6 +32,12 @@ class _QuizState extends State<Quiz> {
 
   void initState() {
     startQuiz();
+    lib.startOpnieuw.stream.listen((event) {
+      setState(() {
+        widget.totalScore = 0;
+        vraagTeller = 0;
+      });
+    });
     super.initState();
   }
 
