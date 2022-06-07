@@ -21,7 +21,7 @@ class Quiz extends StatefulWidget {
   }
 }
 
-class _QuizState extends State<Quiz> {
+class _QuizState extends State<Quiz> with AutomaticKeepAliveClientMixin {
   // int questionIndex = 0;
   int vraagTeller = 0;
   int timer = 10;
@@ -29,7 +29,10 @@ class _QuizState extends State<Quiz> {
 
 
 
-
+  @override
+  bool get wantKeepAlive {
+    return true;
+  }
   void initState() {
     startQuiz();
     lib.startOpnieuw.stream.listen((event) {
