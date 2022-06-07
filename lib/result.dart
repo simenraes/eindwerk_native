@@ -63,7 +63,7 @@ class Result extends StatelessWidget {
                   onPrimary: Colors.white, // foreground
                 ),
                 child: const Text('Opnieuw', style: lib.basisTekst, textScaleFactor: 1.2),
-                onPressed: () => print('gedrukt'),
+                onPressed: () => lib.startOpnieuw.add(true),
               ),
             )
           ],
