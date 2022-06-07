@@ -19,4 +19,7 @@ const vragenUrl = 'https://simenraes.github.io/data/data.json';
 
 StreamController<bool> startOpnieuw = StreamController<bool>();
 
+bool geladen = false;
+
+
 
