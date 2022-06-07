@@ -11,6 +11,7 @@ import 'dart:convert';
 
 
 class Quiz extends StatefulWidget {
+
   @override
   _QuizState createState() {
     return _QuizState();
@@ -53,9 +54,10 @@ class _QuizState extends State<Quiz> {
   }
 
   void verwerkAntwoord() {
-
+var timer= 30;
     setState(() {
       vraagTeller++;
+
     });
   }
 }

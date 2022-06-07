@@ -32,8 +32,9 @@ class _QuestionState extends State<Question> {
       if (!mounted) return;
       setState(() {
         if(timer<1){
-          t.cancel();
+
           widget.verwerkAntwoord();
+          timer= 30;
         }
         else{
           timer= timer - 1;
