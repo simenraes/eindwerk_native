@@ -1,5 +1,7 @@
 library bibliotheek;
 import 'package:flutter/material.dart';
+import 'dart:async';
+
 
 const double tekstMarge = 10.0;
 const TextStyle basisTekst = TextStyle(
@@ -14,3 +16,4 @@ const TextStyle kopTekst = TextStyle(
 
 List<dynamic> questions = [];
 const vragenUrl = 'https://simenraes.github.io/data/data.json';
+
