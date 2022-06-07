@@ -4,13 +4,14 @@ import '../bibliotheek.dart' as lib;
 class Answer extends StatefulWidget {
   final String antwoord;
   final Function verwerkAntwoord;
+  int score= 0;
 
 
 
 
 
 
-  Answer(this.antwoord, this.verwerkAntwoord);
+  Answer(this.antwoord, this.verwerkAntwoord, this.score);
 
   @override
   _AnswerState createState() => _AnswerState();
@@ -42,7 +43,7 @@ class _AnswerState extends State<Answer> {
             ),
           ),
     onTap: () {
-      widget.verwerkAntwoord();
+      widget.verwerkAntwoord(widget.score);
     }
         ),
 

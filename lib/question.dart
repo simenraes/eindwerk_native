@@ -92,7 +92,7 @@ class _QuestionState extends State<Question> {
 
     for (int rij = 0; rij < answerQuantity; rij++) {
       List<Answer> knoppen = <Answer>[];
-      knoppen.add(Answer(lib.questions[widget.vraagNummer]['answers'][rij]['text'], widget.verwerkAntwoord));
+      knoppen.add(Answer(lib.questions[widget.vraagNummer]['answers'][rij]['text'], widget.verwerkAntwoord, lib.questions[widget.vraagNummer]['answers'][rij]['score']));
 
       rijen.add(Container(
         constraints: BoxConstraints(minWidth: 20, maxWidth: 50),
