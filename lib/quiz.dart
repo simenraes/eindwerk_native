@@ -22,6 +22,7 @@ class _QuizState extends State<Quiz> {
   int vraagTeller = 0;
 
 
+
   void initState() {
     startQuiz();
     super.initState();
@@ -33,10 +34,11 @@ class _QuizState extends State<Quiz> {
     if (vraagTeller==lib.questions.length) {
       return Result();
     } else {
-      return Question(vraagTeller);
+      return Question(vraagTeller, verwerkAntwoord);
     }
 
   }
+
 
   void startQuiz() async {
     try {
@@ -47,6 +49,13 @@ class _QuizState extends State<Quiz> {
     }
     setState(() {
       vraagTeller = 0;
+    });
+  }
+
+  void verwerkAntwoord() {
+
+    setState(() {
+      vraagTeller++;
     });
   }
 }
