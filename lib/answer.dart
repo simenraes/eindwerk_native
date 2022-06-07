@@ -23,6 +23,7 @@ class _AnswerState extends State<Answer> {
     return Padding(
         padding: const EdgeInsets.all(lib.tekstMarge),
 
+
         child: GestureDetector(
           child: ConstrainedBox(
             constraints: BoxConstraints( minWidth: knopBreedte, maxWidth: knopBreedte),
@@ -41,7 +42,9 @@ class _AnswerState extends State<Answer> {
     onTap: () {
       print('tik');
     }
-        )
+        ),
+
+
     );
   }
 }

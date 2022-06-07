@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'answer.dart';
 import 'question.dart';
@@ -18,12 +20,31 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
   // int questionIndex = 0;
   int vraagTeller = 0;
+  int timer= 30;
+  String showtimer = "30";
 
   void initState() {
     startQuiz();
     super.initState();
   }
+void starttimer() async{
+    const onesec = Duration(seconds: 1);
+    Timer.periodic(onesec, (Timer t) {
+      setState(() {
+        if(timer<1){
+          t.cancel();
+        }
+        else{
+          timer= timer - 1;
+        }
+        showtimer = timer.toString();
 
+
+      });
+
+
+    });
+}
 
   @override
   Widget build(BuildContext context) {

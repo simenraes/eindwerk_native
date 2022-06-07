@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'answer.dart';
 import 'bibliotheek.dart' as lib;
+import 'quiz.dart';
 
-class Question extends StatelessWidget {
+
+class Question extends StatefulWidget {
   // final String questionText;
   int vraagNummer = 0;
 
   Question(this.vraagNummer);
-
+  @override
+  _QuestionState createState() => _QuestionState();
+}
+class _QuestionState extends State<Question> {
   @override
   Widget build(BuildContext context) {
     List<Widget> header = <Widget>[
@@ -18,10 +23,10 @@ class Question extends StatelessWidget {
             constraints: BoxConstraints(minHeight: 50),
             child: Container(
                 child: Text(
-              lib.questions[vraagNummer]['questionText'],
-              style: lib.kopTekst,
-              textAlign: TextAlign.center,
-            )),
+                  lib.questions[widget.vraagNummer]['questionText'],
+                  style: lib.kopTekst,
+                  textAlign: TextAlign.center,
+                )),
           ),
           Expanded(
             flex: 1,
@@ -47,11 +52,11 @@ class Question extends StatelessWidget {
 
   List<Container> maakAntwoordRijen() {
     List<Container> rijen = <Container>[];
-    int answerQuantity = (lib.questions[vraagNummer]['answers'].length);
+    int answerQuantity = (lib.questions[widget.vraagNummer]['answers'].length);
 
     for (int rij = 0; rij < answerQuantity; rij++) {
       List<Answer> knoppen = <Answer>[];
-      knoppen.add(Answer(lib.questions[vraagNummer]['answers'][rij]['text']));
+      knoppen.add(Answer(lib.questions[widget.vraagNummer]['answers'][rij]['text']));
 
       rijen.add(Container(
         constraints: BoxConstraints(minWidth: 20, maxWidth: 50),
@@ -67,4 +72,5 @@ class Question extends StatelessWidget {
 
     return rijen;
   }
+
 }
