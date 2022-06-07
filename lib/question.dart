@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'answer.dart';
 import 'bibliotheek.dart' as lib;
-import 'quiz.dart';
 
 
 class Question extends StatefulWidget {
@@ -20,7 +19,6 @@ class Question extends StatefulWidget {
 }
 class _QuestionState extends State<Question> {
   String showtimer = "10";
-  bool canceltimer= false;
   int score = 0;
 
 
@@ -33,7 +31,12 @@ class _QuestionState extends State<Question> {
   void starttimer() async{
     const onesec = Duration(seconds: 1);
     Timer.periodic(onesec, (Timer t) {
-      if (!mounted) return;
+      if (!mounted) {
+        widget.timer = widget.timer;
+
+      }
+
+      else{
       setState(() {
         if(widget.timer<1){
 
@@ -46,7 +49,7 @@ class _QuestionState extends State<Question> {
         showtimer = widget.timer.toString();
 
 
-      });
+      });}
 
 
     });
