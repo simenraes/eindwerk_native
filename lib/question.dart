@@ -21,6 +21,8 @@ class Question extends StatefulWidget {
 class _QuestionState extends State<Question> {
   String showtimer = "10";
   bool canceltimer= false;
+  int score = 0;
+
 
   @override
   void initState(){
@@ -35,7 +37,7 @@ class _QuestionState extends State<Question> {
       setState(() {
         if(widget.timer<1){
 
-          widget.verwerkAntwoord();
+          widget.verwerkAntwoord(score);
           widget.timer= 10;
         }
         else{
