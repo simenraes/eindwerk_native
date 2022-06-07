@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
    int totalScore;
-   String resultText;
+   // String resultText;
   // final Function restartQuiz;
-  Result(this.totalScore, this.resultText);
+  Result(this.totalScore);
 
   Map<String, Object> get result {
-    String text;
+    String resultText;
     Color textColor;
     Color background;
     if (totalScore <= 8) {
@@ -39,7 +39,7 @@ class Result extends StatelessWidget {
       child: Container(
         // alignment: Alignment.center,
 
-        color: Colors.yellow,
+        color: Colors.purple,
         width: double.infinity,
         padding: EdgeInsets.all(50),
         child: Column(
@@ -47,7 +47,7 @@ class Result extends StatelessWidget {
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
-              totalScore.toString(),
+              result['text'].toString(),
               style: TextStyle(
                   fontSize: 36,
                   color: Colors.purple,

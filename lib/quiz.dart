@@ -39,7 +39,7 @@ class _QuizState extends State<Quiz> {
   @override
   Widget build(BuildContext context) {
     if (vraagTeller==lib.questions.length) {
-      return Result(widget.totalScore, resultText);
+      return Result(widget.totalScore);
     } else {
       return Question(vraagTeller, verwerkAntwoord, timer);
     }
