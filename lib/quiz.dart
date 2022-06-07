@@ -47,6 +47,8 @@ class _QuizState extends State<Quiz> with AutomaticKeepAliveClientMixin {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context); //call supperclass for the mixin
+
     if (!lib.geladen || lib.questions.length==0) {
       String tekst = 'Loading...';
       if (lib.geladen) {
