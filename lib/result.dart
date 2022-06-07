@@ -39,7 +39,7 @@ class Result extends StatelessWidget {
       child: Container(
         // alignment: Alignment.center,
 
-        color: Colors.purple,
+        color: Colors.yellow,
         width: double.infinity,
         padding: EdgeInsets.all(50),
         child: Column(
@@ -48,7 +48,7 @@ class Result extends StatelessWidget {
           children: <Widget>[
             Text(
               result['text'].toString(),
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 36,
                   color: Colors.purple,
                   fontWeight: FontWeight.bold),
@@ -56,14 +56,15 @@ class Result extends StatelessWidget {
 
             ),
             Container(
-              margin: EdgeInsets.only(top: 50),
-              // margin: EdgeInsets.all(20),
-              // child: RaisedButton(
-              //   child: Text('Start again'),
-              //   color: Colors.green,
-              //   textColor: Colors.white,
-              //   onPressed: restartQuiz,
-              // ),
+              margin: EdgeInsets.symmetric(vertical: 20, horizontal: 60),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blue, // background
+                  onPrimary: Colors.white, // foreground
+                ),
+                child: const Text('Opnieuw', style: lib.basisTekst, textScaleFactor: 1.2),
+                onPressed: () => print('gedrukt'),
+              ),
             )
           ],
         ),
