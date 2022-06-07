@@ -21,6 +21,8 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
   // int questionIndex = 0;
   int vraagTeller = 0;
+  int timer = 10;
+
 
 
 
@@ -35,7 +37,7 @@ class _QuizState extends State<Quiz> {
     if (vraagTeller==lib.questions.length) {
       return Result();
     } else {
-      return Question(vraagTeller, verwerkAntwoord);
+      return Question(vraagTeller, verwerkAntwoord, timer);
     }
 
   }
@@ -54,9 +56,9 @@ class _QuizState extends State<Quiz> {
   }
 
   void verwerkAntwoord() {
-var timer= 30;
     setState(() {
       vraagTeller++;
+      timer= 10;
 
     });
   }

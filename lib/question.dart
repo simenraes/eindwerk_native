@@ -10,15 +10,16 @@ class Question extends StatefulWidget {
   // final String questionText;
   int vraagNummer = 0;
   final Function verwerkAntwoord;
+  int timer= 10;
 
 
-  Question(this.vraagNummer, this.verwerkAntwoord);
+
+  Question(this.vraagNummer, this.verwerkAntwoord, this.timer);
   @override
   _QuestionState createState() => _QuestionState();
 }
 class _QuestionState extends State<Question> {
-  int timer= 30;
-  String showtimer = "30";
+  String showtimer = "10";
 
   @override
   void initState(){
@@ -31,15 +32,15 @@ class _QuestionState extends State<Question> {
     Timer.periodic(onesec, (Timer t) {
       if (!mounted) return;
       setState(() {
-        if(timer<1){
+        if(widget.timer<1){
 
           widget.verwerkAntwoord();
-          timer= 30;
+          widget.timer= 10;
         }
         else{
-          timer= timer - 1;
+          widget.timer= widget.timer - 1;
         }
-        showtimer = timer.toString();
+        showtimer = widget.timer.toString();
 
 
       });
