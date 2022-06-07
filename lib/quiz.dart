@@ -44,7 +44,19 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(BuildContext context) {
-    if (vraagTeller==lib.questions.length) {
+    if (!lib.geladen || lib.questions.length==0) {
+      String tekst = 'Loading...';
+      if (lib.geladen) {
+        tekst = 'No questions available';
+      }
+      return Container(
+        child: Center(
+          child: Text(
+            tekst, style: lib.basisTekst, textAlign: TextAlign.center,),
+        ),
+      );
+    }
+    else if (vraagTeller==lib.questions.length) {
       return Result(widget.totalScore);
     } else {
       return Question(vraagTeller, verwerkAntwoord, timer);
