@@ -3,12 +3,14 @@ import '../bibliotheek.dart' as lib;
 
 class Answer extends StatefulWidget {
   final String antwoord;
+  final Function verwerkAntwoord;
 
 
 
 
 
-  Answer(this.antwoord);
+
+  Answer(this.antwoord, this.verwerkAntwoord);
 
   @override
   _AnswerState createState() => _AnswerState();
@@ -40,7 +42,7 @@ class _AnswerState extends State<Answer> {
             ),
           ),
     onTap: () {
-      print('tik');
+      widget.verwerkAntwoord();
     }
         ),
 

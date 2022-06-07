@@ -32,6 +32,7 @@ class _QuestionState extends State<Question> {
       setState(() {
         if(timer<1){
           t.cancel();
+          widget.verwerkAntwoord;
         }
         else{
           timer= timer - 1;
@@ -87,7 +88,7 @@ class _QuestionState extends State<Question> {
 
     for (int rij = 0; rij < answerQuantity; rij++) {
       List<Answer> knoppen = <Answer>[];
-      knoppen.add(Answer(lib.questions[widget.vraagNummer]['answers'][rij]['text']));
+      knoppen.add(Answer(lib.questions[widget.vraagNummer]['answers'][rij]['text'], widget.verwerkAntwoord));
 
       rijen.add(Container(
         constraints: BoxConstraints(minWidth: 20, maxWidth: 50),
