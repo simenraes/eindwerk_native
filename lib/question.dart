@@ -29,6 +29,7 @@ class _QuestionState extends State<Question> {
   void starttimer() async{
     const onesec = Duration(seconds: 1);
     Timer.periodic(onesec, (Timer t) {
+      if (!mounted) return;
       setState(() {
         if(timer<1){
           t.cancel();
