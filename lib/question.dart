@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'answer.dart';
 import 'bibliotheek.dart' as lib;
@@ -13,6 +15,33 @@ class Question extends StatefulWidget {
   _QuestionState createState() => _QuestionState();
 }
 class _QuestionState extends State<Question> {
+  int timer= 30;
+  String showtimer = "30";
+
+  @override
+  void initState(){
+    starttimer();
+    super.initState();
+  }
+
+  void starttimer() async{
+    const onesec = Duration(seconds: 1);
+    Timer.periodic(onesec, (Timer t) {
+      setState(() {
+        if(timer<1){
+          t.cancel();
+        }
+        else{
+          timer= timer - 1;
+        }
+        showtimer = timer.toString();
+
+
+      });
+
+
+    });
+  }
   @override
   Widget build(BuildContext context) {
     List<Widget> header = <Widget>[
@@ -33,7 +62,7 @@ class _QuestionState extends State<Question> {
             child: Container(
               child: Center(
                 child: Text(
-                  "30",
+                  showtimer,
                   style: TextStyle(
                     fontSize: 35.0,
                     fontWeight: FontWeight.w700,
