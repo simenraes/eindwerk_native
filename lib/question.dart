@@ -20,6 +20,9 @@ class Question extends StatefulWidget {
 class _QuestionState extends State<Question> {
   String showtimer = "10";
   int score = 0;
+  bool timerIsRunning= true;
+  late Timer test;
+
 
 
   @override
@@ -28,16 +31,26 @@ class _QuestionState extends State<Question> {
     super.initState();
   }
 
+  @override
+  void deactivate() {
+    print('DEACTIVATE');
+    test.cancel();
+    super.deactivate();
+  }
+
   void starttimer() async{
     const onesec = Duration(seconds: 1);
-    Timer.periodic(onesec, (Timer t) {
+   test= Timer.periodic(onesec, (Timer t) {
       if (!mounted) {
-        widget.timer = widget.timer;
+        return;
 
       }
 
-      else{
+
       setState(() {
+        if(widget.timer==5){
+
+        }
         if(widget.timer<1){
 
           widget.verwerkAntwoord(score);
@@ -49,10 +62,15 @@ class _QuestionState extends State<Question> {
         showtimer = widget.timer.toString();
 
 
-      });}
+      });
 
 
     });
+  }
+  @override
+  void dispose() {
+    super.dispose();
+    test.cancel();
   }
   @override
   Widget build(BuildContext context) {

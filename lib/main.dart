@@ -38,7 +38,7 @@ class QuizApp extends StatelessWidget {
                 indicatorColor: Colors.red,
                 labelColor: Colors.red,
                 tabs: [
-                  Tab(icon:Icon(Icons.home), text:"welkom"),
+                  Tab(icon:Icon(Icons.home), text:"welkom") ,
                   Tab(icon:Icon(Icons.live_help), text:"QUIZ!"),
                   Tab(icon:Icon(Icons.info), text:"over deze app"),
                 ]
