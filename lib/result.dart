@@ -19,24 +19,24 @@ class Result extends StatelessWidget {
       resultText = 'You are gentle, pure, quiet and innocent';
       background = Colors.white;
       textColor = Colors.pink;
-      imageUrl = "assets/images/innocent baby.webp";
+      imageUrl = "assets/images/baby3.png";
     } else if (totalScore <= 12) {
       resultText = 'You are pretty likeable, joyful and alive!';
       background = Colors.orange;
       textColor = Colors.green;
-      imageUrl = "assets/images/gentle baby.jfif";
+      imageUrl = "assets/images/baby4.png";
 
     } else if (totalScore <= 16) {
       resultText = 'You can be sometimes nervous, nasty or even strange';
       background = Colors.red;
       textColor = Colors.white;
-      imageUrl = "assets/images/flutter.png";
+      imageUrl = "assets/images/nervous.png";
 
     } else {
       resultText = 'You are wounded, violent, often angry, even sometimes dangerous or destructive';
       background = Colors.black;
       textColor = Colors.red;
-      imageUrl = "assets/images/flutter.png";
+      imageUrl = "assets/images/danger.png";
 
     }
     return {'text': resultText, 'textColor': textColor, 'background': background, 'imageurl': imageUrl};
@@ -56,7 +56,7 @@ class Result extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Image.asset(result['imageurl'].toString(), width: 100, height: 80,),
+            Image.asset(result['imageurl'].toString(), width: 200, height: 160,),
             Text(
               result['text'].toString(),
               style: const TextStyle(

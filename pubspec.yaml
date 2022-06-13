@@ -63,8 +63,10 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/flutter.png
-    - assets/images/innocent baby.webp
-    - assets/images/gentle baby.jfif
+    - assets/images/baby3.png
+    - assets/images/baby4.png
+    - assets/images/nervous.png
+    - assets/images/danger.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
