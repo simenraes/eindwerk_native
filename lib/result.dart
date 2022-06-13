@@ -4,31 +4,47 @@ import 'package:audioplayers/audioplayers.dart';
 
 
 
-import 'package:flutter/material.dart';
 
-class Result extends StatelessWidget {
-   int totalScore;
-   // String resultText;
-  // final Function restartQuiz;
+class Result extends StatefulWidget {
+  int totalScore;
+
   Result(this.totalScore);
+
+
+
+
+
+  @override
+  _ResultState createState() => _ResultState();
+}
+
+class _ResultState extends State<Result> {
+  final AudioCache audioSpeler = AudioCache();
+
+
+  @override
+  void initState(){
+
+    super.initState();
+  }
 
   Map<String, Object> get result {
     String resultText;
     Color textColor;
     Color background;
     String imageUrl;
-    if (totalScore <= 8) {
+    if (widget.totalScore <= 8) {
       resultText = 'You are gentle, pure, quiet and innocent';
       background = Colors.white;
       textColor = Colors.pink;
       imageUrl = "assets/images/baby3.png";
-    } else if (totalScore <= 12) {
+    } else if (widget.totalScore <= 12) {
       resultText = 'You are pretty likeable, joyful and alive!';
       background = Colors.orange;
       textColor = Colors.green;
       imageUrl = "assets/images/baby4.png";
 
-    } else if (totalScore <= 16) {
+    } else if (widget.totalScore <= 16) {
       resultText = 'You can be sometimes nervous, nasty or even strange';
       background = Colors.red;
       textColor = Colors.white;
