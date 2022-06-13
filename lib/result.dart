@@ -19,12 +19,12 @@ class Result extends StatelessWidget {
       resultText = 'You are gentle, pure, quiet and innocent';
       background = Colors.white;
       textColor = Colors.pink;
-      imageUrl = "assets/images/flutter.png";
+      imageUrl = "assets/images/innocent baby.webp";
     } else if (totalScore <= 12) {
       resultText = 'You are pretty likeable, joyful and alive!';
       background = Colors.orange;
       textColor = Colors.green;
-      imageUrl = "assets/images/flutter.png";
+      imageUrl = "assets/images/gentle baby.jfif";
 
     } else if (totalScore <= 16) {
       resultText = 'You can be sometimes nervous, nasty or even strange';
