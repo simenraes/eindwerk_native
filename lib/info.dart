@@ -3,7 +3,7 @@ import 'bibliotheek.dart' as lib;
 
 
 class Info extends StatelessWidget {
-  static const test= "assets/images/flutter.png";
+  String test= "assets/images/flutter.png";
   @override
   Widget build(BuildContext context) {
     // return Container(color: Colors.yellow);

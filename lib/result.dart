@@ -14,24 +14,32 @@ class Result extends StatelessWidget {
     String resultText;
     Color textColor;
     Color background;
+    String imageUrl;
     if (totalScore <= 8) {
       resultText = 'You are gentle, pure, quiet and innocent';
       background = Colors.white;
       textColor = Colors.pink;
+      imageUrl = "assets/images/flutter.png";
     } else if (totalScore <= 12) {
       resultText = 'You are pretty likeable, joyful and alive!';
       background = Colors.orange;
       textColor = Colors.green;
+      imageUrl = "assets/images/flutter.png";
+
     } else if (totalScore <= 16) {
       resultText = 'You can be sometimes nervous, nasty or even strange';
       background = Colors.red;
       textColor = Colors.white;
+      imageUrl = "assets/images/flutter.png";
+
     } else {
       resultText = 'You are wounded, violent, often angry, even sometimes dangerous or destructive';
       background = Colors.black;
       textColor = Colors.red;
+      imageUrl = "assets/images/flutter.png";
+
     }
-    return {'text': resultText, 'textColor': textColor, 'background': background};
+    return {'text': resultText, 'textColor': textColor, 'background': background, 'imageurl': imageUrl};
   }
   @override
   Widget build(BuildContext context) {
@@ -43,9 +51,12 @@ class Result extends StatelessWidget {
         width: double.infinity,
         padding: EdgeInsets.all(50),
         child: Column(
+
+
           mainAxisAlignment: MainAxisAlignment.center,
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            Image.asset("assets/images/flutter.png", height: 100, width:80 ,),
             Text(
               result['text'].toString(),
               style: const TextStyle(
