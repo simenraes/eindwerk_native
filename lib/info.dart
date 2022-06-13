@@ -3,8 +3,14 @@ import 'bibliotheek.dart' as lib;
 
 
 class Info extends StatelessWidget {
+  static const test= "assets/images/flutter.png";
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.yellow);
+    // return Container(color: Colors.yellow);
+    return Image.asset(test,
+      width: 50,
+      height: 50,
+      );
+
   }
 }
