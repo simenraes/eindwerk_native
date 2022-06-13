@@ -56,7 +56,7 @@ class Result extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Image.asset("assets/images/flutter.png", height: 100, width:80 ,),
+            Image.asset(result['imageurl'].toString(), width: 100, height: 80,),
             Text(
               result['text'].toString(),
               style: const TextStyle(
