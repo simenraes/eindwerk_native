@@ -53,10 +53,7 @@ class _QuestionState extends State<Question> with TickerProviderStateMixin  {
 
 
       setState(() {
-        if(widget.timer==5){
-test.cancel();
 
-        }
         if(widget.timer<1){
 
           widget.verwerkAntwoord(score);
@@ -119,13 +116,15 @@ test.cancel();
                 if (_isPlay == false) {
                   _controller.forward();
                   _isPlay = true;
+                  test.cancel();
                 } else {
                   _controller.reverse();
                   _isPlay = false;
+                  starttimer();
                 }
               },
               child: AnimatedIcon(
-                icon: AnimatedIcons.play_pause,
+                icon: AnimatedIcons.pause_play,
                 progress: _controller,
                 size: 200,
                 color: Colors.blue,
