@@ -3,6 +3,10 @@ import 'package:mailer/mailer.dart';
 import 'package:mailer/smtp_server.dart';
 
 class MailDialoog extends StatelessWidget {
+  final int totalscore;
+
+  MailDialoog(this.totalscore);
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
