@@ -52,6 +52,7 @@ dev_dependencies:
   audioplayers: ^0.20.1
   video_player: ^2.2.16
   mailer: ^5.1.0
+  email_validator: ^2.0.1
 
 
 

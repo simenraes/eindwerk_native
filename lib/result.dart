@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../bibliotheek.dart' as lib;
 import 'package:audioplayers/audioplayers.dart';
-import 'mailDialog.dart';
+import 'mailDialoog.dart';
 
 
 
@@ -114,11 +114,11 @@ class _ResultState extends State<Result> {
                   onPressed: () => {
                     showDialog(
                         context: context,
-                        builder: (context) => MailDialoog(widget.totalScore)
+                        builder: (context) => MailDialoog()
                     )
                   }
               ),
-            ),
+            )
           ],
         ),
       ),
