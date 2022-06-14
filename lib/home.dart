@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
-import 'bibliotheek.dart' as lib;
+import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
+
 
 
 class Home extends StatelessWidget {
-  @override
+  Widget build(BuildContext buildContext) => MaterialApp(
+    home: Scaffold(
+      body: AppTree(),
+      appBar: AppBar(title: Text("Video afspelen"),),
+    ),
+  );
+}
+
+class AppTree extends StatelessWidget {
+  VideoPlayerController videoController = VideoPlayerController.asset("assets/video/quizintro.mp4");
+
   Widget build(BuildContext context) {
-    return Container(color: Colors.yellow);
+    videoController.initialize();
+    videoController.play();
+    return VideoPlayer(videoController);
   }
 }
