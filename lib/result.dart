@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../bibliotheek.dart' as lib;
 import 'package:audioplayers/audioplayers.dart';
+import 'mailDialog.dart';
+
 
 
 
@@ -94,7 +96,29 @@ class _ResultState extends State<Result> {
                 child: const Text('Opnieuw', style: lib.basisTekst, textScaleFactor: 1.2),
                 onPressed: () => lib.startOpnieuw.add(true),
               ),
-            )
+            ),
+            Container(
+                height: 60,
+                child: Center(
+                  child: Text("Deel je uitslag", style: lib.kopTekst,),
+                )
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 20, horizontal: 60),
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.blue,
+                      onPrimary: Colors.white
+                  ),
+                  child: Text('Versturen', style: lib.basisTekst, textScaleFactor: 1.2),
+                  onPressed: () => {
+                    showDialog(
+                        context: context,
+                        builder: (context) => MailDialoog()
+                    )
+                  }
+              ),
+            ),
           ],
         ),
       ),
