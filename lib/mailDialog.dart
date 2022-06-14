@@ -24,7 +24,12 @@ class MailDialoog extends StatelessWidget {
         ),
         TextButton(
           child: Text('Verstuur'),
-          onPressed: () => Navigator.of(context).pop(),
+
+          onPressed: () {
+            print(tekstveldController.text);
+
+            Navigator.of(context).pop();
+          },
         )
       ],
     );
