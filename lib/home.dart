@@ -8,13 +8,12 @@ class Home extends StatelessWidget {
   Widget build(BuildContext buildContext) => MaterialApp(
     home: Scaffold(
       body: AppTree(),
-      appBar: AppBar(title: Text("Video afspelen"),),
     ),
   );
 }
 
 class AppTree extends StatelessWidget {
-  VideoPlayerController videoController = VideoPlayerController.asset("assets/video/quizintro.mp4");
+  VideoPlayerController videoController = VideoPlayerController.network("https://boek.flutter.nl/geograaf.mp4");
 
   Widget build(BuildContext context) {
     videoController.initialize();
