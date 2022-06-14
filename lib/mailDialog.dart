@@ -9,6 +9,32 @@ class MailDialoog extends StatelessWidget {
 
   MailDialoog(this.totalscore);
 
+  stuurMail() async {
+    const String gebruikersnaam = '...@thomasmore.be';
+    const String paswoord = '...';
+
+    final smtpServer = SmtpServer("smtp.office365.com",
+        port: 587,
+        allowInsecure: true,
+        ignoreBadCertificate: true,
+        username: gebruikersnaam,
+        password: paswoord
+    );
+
+    final message = Message();
+    message.from = Address(gebruikersnaam, 'Flutter Quiz');
+    message.recipients.add(tekstveldController.text);
+    message.subject = 'Uitslag van de quiz';
+    message.html = "<h1>Uitslag</h1>\n" + "<p>Je score is $totalscore</p>";
+
+    try {
+      await send(message, smtpServer);
+      print('Succesvol verzonden');
+    } catch(error) {
+      print(error);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
