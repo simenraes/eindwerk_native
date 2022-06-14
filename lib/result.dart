@@ -24,7 +24,7 @@ class _ResultState extends State<Result> {
 
   @override
   void initState(){
-
+    audioSpeler.play('audio/applause-2.mp3', volume: 1);
     super.initState();
   }
 
