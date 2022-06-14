@@ -4,6 +4,8 @@ import 'package:mailer/smtp_server.dart';
 
 class MailDialoog extends StatelessWidget {
   final int totalscore;
+  final TextEditingController tekstveldController = TextEditingController();
+
 
   MailDialoog(this.totalscore);
 

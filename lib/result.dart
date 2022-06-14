@@ -114,7 +114,7 @@ class _ResultState extends State<Result> {
                   onPressed: () => {
                     showDialog(
                         context: context,
-                        builder: (context) => MailDialoog()
+                        builder: (context) => MailDialoog(widget.totalScore)
                     )
                   }
               ),
