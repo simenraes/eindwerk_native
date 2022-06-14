@@ -17,19 +17,24 @@ class Question extends StatefulWidget {
   @override
   _QuestionState createState() => _QuestionState();
 }
-class _QuestionState extends State<Question> {
+class _QuestionState extends State<Question> with TickerProviderStateMixin  {
   String showtimer = "10";
   int score = 0;
   bool timerIsRunning= true;
   late Timer test;
+  bool _isPlay = false;
+  late AnimationController _controller;
 
 
 
   @override
   void initState(){
     starttimer();
+    _controller =
+        AnimationController(duration: const Duration(seconds: 1), vsync: this);
     super.initState();
   }
+
 
   @override
   void deactivate() {
@@ -48,9 +53,7 @@ class _QuestionState extends State<Question> {
 
 
       setState(() {
-        if(widget.timer==5){
 
-        }
         if(widget.timer<1){
 
           widget.verwerkAntwoord(score);
@@ -58,6 +61,9 @@ class _QuestionState extends State<Question> {
         }
         else{
           widget.timer= widget.timer - 1;
+          setState(() {
+            widget.timer = widget.timer;
+          });
         }
         showtimer = widget.timer.toString();
 
@@ -69,8 +75,10 @@ class _QuestionState extends State<Question> {
   }
   @override
   void dispose() {
-    super.dispose();
+    _controller.dispose();
     test.cancel();
+
+    super.dispose();
   }
   @override
   Widget build(BuildContext context) {
@@ -99,6 +107,27 @@ class _QuestionState extends State<Question> {
                     fontFamily: 'Times New Roman',
                   ),
                 ),
+              ),
+            ),
+          ),
+          Container(
+            child: GestureDetector(
+              onTap: () {
+                if (_isPlay == false) {
+                  _controller.forward();
+                  _isPlay = true;
+                  test.cancel();
+                } else {
+                  _controller.reverse();
+                  _isPlay = false;
+                  starttimer();
+                }
+              },
+              child: AnimatedIcon(
+                icon: AnimatedIcons.pause_play,
+                progress: _controller,
+                size: 85,
+                color: Colors.blue,
               ),
             ),
           )
