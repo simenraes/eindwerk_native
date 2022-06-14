@@ -76,16 +76,16 @@ class _ResultState extends State<Result> {
           mainAxisAlignment: MainAxisAlignment.center,
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            // Image.asset(result['imageurl'].toString(), width: 200, height: 160,),
-            // Text(
-            //   result['text'].toString(),
-            //   style: const TextStyle(
-            //       fontSize: 36,
-            //       color: Colors.purple,
-            //       fontWeight: FontWeight.bold),
-            //   textAlign: TextAlign.center,
-            //
-            // ),
+            Image.asset(result['imageurl'].toString(), width: 150, height: 110,),
+            Text(
+              result['text'].toString(),
+              style: const TextStyle(
+                  fontSize: 15,
+                  color: Colors.purple,
+                  fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+
+            ),
             Container(
               margin: EdgeInsets.symmetric(vertical: 20, horizontal: 60),
               child: ElevatedButton(

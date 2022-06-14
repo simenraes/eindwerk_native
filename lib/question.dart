@@ -126,7 +126,7 @@ class _QuestionState extends State<Question> with TickerProviderStateMixin  {
               child: AnimatedIcon(
                 icon: AnimatedIcons.pause_play,
                 progress: _controller,
-                size: 200,
+                size: 85,
                 color: Colors.blue,
               ),
             ),
